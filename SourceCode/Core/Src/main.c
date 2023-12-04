@@ -23,27 +23,13 @@
 //#include "stdio.h"
 
 /* Private function prototypes -----------------------------------------------*/
-#ifdef __GNUC__
- /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
- set to 'Yes') calls __io_putchar() */
- #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
-#else
- #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
-#endif /* __GNUC__ */
-
 
 /**
  * @brief Retargets the C library printf function to the USART.
  * @param None
  * @retval None
  */
-PUTCHAR_PROTOTYPE
-{
- /* Place your implementation of fputc here */
- /* e.g. write a character to the USART */
- HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 100);
- return ch;
-}
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -85,7 +71,6 @@ static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN 0 */
 
 uint8_t rx_data;
-
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
     if(huart->Instance == USART1){
@@ -141,8 +126,8 @@ int main(void)
   {
 //	  SCH_Dispatch_Tasks();
 //
-	  	  HAL_UART_Transmit(&huart1,tx_data, sizeof(tx_data), 100);
-	    HAL_UART_Receive_IT(&huart1, &rx_data, 1);
+//	  	  HAL_UART_Transmit(&huart1,tx_data, sizeof(tx_data), 100);
+//	    HAL_UART_Receive_IT(&huart1, &rx_data, 1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

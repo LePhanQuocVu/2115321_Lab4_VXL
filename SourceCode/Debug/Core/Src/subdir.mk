@@ -5,40 +5,46 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/global.c \
 ../Core/Src/main.c \
 ../Core/Src/scheduler.c \
 ../Core/Src/software_timer.c \
-../Core/Src/stdio.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
 ../Core/Src/stm32f1xx_it.c \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
 ../Core/Src/system_stm32f1xx.c \
-../Core/Src/uart.c 
+../Core/Src/task.c \
+../Core/Src/uart.c \
+../Core/Src/watchdog.c 
 
 OBJS += \
+./Core/Src/global.o \
 ./Core/Src/main.o \
 ./Core/Src/scheduler.o \
 ./Core/Src/software_timer.o \
-./Core/Src/stdio.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
 ./Core/Src/stm32f1xx_it.o \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
 ./Core/Src/system_stm32f1xx.o \
-./Core/Src/uart.o 
+./Core/Src/task.o \
+./Core/Src/uart.o \
+./Core/Src/watchdog.o 
 
 C_DEPS += \
+./Core/Src/global.d \
 ./Core/Src/main.d \
 ./Core/Src/scheduler.d \
 ./Core/Src/software_timer.d \
-./Core/Src/stdio.d \
 ./Core/Src/stm32f1xx_hal_msp.d \
 ./Core/Src/stm32f1xx_it.d \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
 ./Core/Src/system_stm32f1xx.d \
-./Core/Src/uart.d 
+./Core/Src/task.d \
+./Core/Src/uart.d \
+./Core/Src/watchdog.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
