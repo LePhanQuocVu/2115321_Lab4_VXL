@@ -1,0 +1,7 @@
+task.c:16:6:Counter	4	static
+task.c:19:6:task0	48	static
+task.c:27:6:task1	48	static
+task.c:35:6:task2	48	static
+task.c:43:6:task3	48	static
+task.c:51:6:task4	48	static
+task.c:59:6:task5	48	static
